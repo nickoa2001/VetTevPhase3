@@ -1,0 +1,19 @@
+﻿//USEUNIT CommonReporting
+//USEUNIT CommonData
+//USEUNIT Customers
+//USEUNIT CustomersData
+//USEUNIT CommonApplication
+//USEUNIT MenuBar
+
+function ST01_SwitchTabs()
+{
+  Log_InitTestCase("ST01_SwitchTabs", "Switch tabs inside the application");
+  Log_CurrentStep("Step 1: Start application and switch between different menu tabs");
+  CommonApplication_StartApplication(10000);
+  MenuBar_SelectCustomersTab();
+  MenuBar_SelectAnimalsTab();
+  MenuBar_SelectCalendarTab();
+  
+  Log_CurrentStep("Step 2: Close the application and store results");
+  CommonReporting.Log_CurrentTestCaseStatusPass();
+}
